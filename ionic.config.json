@@ -1,0 +1,7 @@
+{
+  "name": "virtual-shop",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}

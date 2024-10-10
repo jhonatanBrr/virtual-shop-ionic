@@ -2,7 +2,15 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 0px;
+    padding: 20px 10px;
+    overflow-y: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
+    width: 100%;
+}
+
+.container:-webkit-scrollbar {
+    display: none; /* Aca oculto la barra de desplazamiento de Safari y Opera  */
 }
 
 .button-group {
@@ -17,6 +25,8 @@
     color: #ffffff;
     border: solid 2px white;
     transition: background-color 0.2s ease;
+    height: 45px;
+    padding: 0px 20px;
 }
 
 .custom-button-active {

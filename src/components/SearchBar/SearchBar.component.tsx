@@ -11,7 +11,6 @@ const SearchBar: React.FC<SearchBarProps> = ({ searchQuery, setSearchQuery }) =>
   return (
     <IonSearchbar
       value={searchQuery}
-      debounce={500} // Añade un retraso de 500ms para evitar búsquedas innecesarias
       onIonInput={(e) => setSearchQuery(e.detail.value!)}
       placeholder="Search products..."
     />

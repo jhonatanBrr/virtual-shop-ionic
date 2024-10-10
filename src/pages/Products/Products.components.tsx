@@ -20,7 +20,11 @@ const Products: React.FC = () => {
   const [categoryId, setCategoryId] = useState<number>(0);
 
   const dispatch = useAppDispatch();
-  const { products, loading, error } = useAppSelector(state => state.products);
+  const { 
+    products, 
+    loading, 
+    error 
+  } = useAppSelector(state => state.products);
 
   useEffect(() => {
     dispatch(fetchProducts({ page, limit, title: debouncedValue, categoryId }));

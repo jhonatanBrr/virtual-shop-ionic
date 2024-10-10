@@ -26,26 +26,25 @@ const CategoryFilter: React.FC<CategoryFilterProps> = ({
 
     return (
         <div className="container">
-            <IonButtons className="button-group">
-                <IonButton
+            <div className="button-group">
+                <button
                     className={`custom-button ${categoryId == 0 ? "custom-button-active" : ''}`}
                     onClick={() => setCategoryId(0)}
                 >
                     All
-                </IonButton>
+                </button>
                 {
                     categories.map(category => (
-                        <IonButton
+                        <button
                             className={`custom-button ${categoryId == category.id ? "custom-button-active" : ''}`}
                             key={category.id}
                             onClick={() => setCategoryId(category.id)}
                         >
                             {category.name}
-                        </IonButton>
+                        </button>
                     ))
                 }
-            </IonButtons>
-            <IonText className="sort-text">Sort by</IonText>
+            </div>
         </div>
     );
 };

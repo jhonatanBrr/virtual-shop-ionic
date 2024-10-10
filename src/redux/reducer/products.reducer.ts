@@ -1,4 +1,3 @@
-// features/productsSlice.ts
 import { createSlice } from '@reduxjs/toolkit';
 import { fetchProducts } from '../actions/products.actions';
 import { ProductsState } from '../models/productsState.models';

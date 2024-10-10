@@ -1,4 +1,3 @@
-// store.ts
 import { configureStore } from '@reduxjs/toolkit';
 import productsReducer from './reducer/products.reducer';
 import favoritesReducer from './reducer/favorites.reducer';

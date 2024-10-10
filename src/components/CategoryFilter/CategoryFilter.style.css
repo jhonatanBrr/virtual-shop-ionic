@@ -1,0 +1,32 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0px;
+}
+
+.button-group {
+    display: flex;
+    gap: 8px;
+}
+
+.custom-button {
+    background-color: transparent;
+    border-radius: 9999px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: #ffffff;
+    border: solid 2px white;
+    transition: background-color 0.2s ease;
+}
+
+.custom-button-active {
+    background-color: #3B82F6;
+}
+
+.custom-button:hover {
+    background-color: #1d1d1d;
+}
+
+.sort-text {
+    color: #6b7280;
+}

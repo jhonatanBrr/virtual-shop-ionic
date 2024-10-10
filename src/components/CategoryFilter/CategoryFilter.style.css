@@ -19,11 +19,13 @@
 }
 
 .custom-button {
+    font-size: 15px;
+    font-weight: 600;
     background-color: transparent;
     border-radius: 9999px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    color: #ffffff;
-    border: solid 2px white;
+    color: #d4d4d4;
+    border: solid 2px #d4d4d4;
     transition: background-color 0.2s ease;
     height: 45px;
     padding: 0px 20px;
@@ -31,10 +33,6 @@
 
 .custom-button-active {
     background-color: #3B82F6;
-}
-
-.custom-button:hover {
-    background-color: #1d1d1d;
 }
 
 .sort-text {

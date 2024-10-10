@@ -1,0 +1,12 @@
+.products-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding-top: 30px;
+}
+
+
+.full-screen-content__favorite {
+    height: calc(100vh - 140px);
+}

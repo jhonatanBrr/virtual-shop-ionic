@@ -15,12 +15,18 @@ const FavoriteProducts: React.FC = () => {
       <IonContent>
       <div className='products-list'>
           {
-            favorites.map((product) => (
-              <ProductCard
-                key={product.id}
-                product={product}
-              />
-            ))
+            favorites.length  > 0 ? (
+              favorites.map((product) => (
+                <ProductCard
+                  key={product.id}
+                  product={product}
+                />
+              ))
+            ) : (
+              <div className='full-screen-content full-screen-content__favorite'>
+                <p>No hay productos en tu lista de favoritos</p>
+              </div>
+            )
           }
         </div>
       </IonContent>

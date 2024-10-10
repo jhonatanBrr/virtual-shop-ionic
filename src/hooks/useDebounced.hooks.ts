@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 
 const useDebounced = (
-    searcherValue: string
+    searcherValue: string | number
 ) => {
     
-    const [debouncedValue, setDebouncedValue] = useState<string>(searcherValue);
+    const [debouncedValue, setDebouncedValue] = useState< string | number >(searcherValue);
     
     useEffect(() => {
         const handler = setTimeout(() => {

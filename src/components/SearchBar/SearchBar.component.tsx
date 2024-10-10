@@ -12,7 +12,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ searchQuery, setSearchQuery }) =>
     <IonSearchbar
       value={searchQuery}
       onIonInput={(e) => setSearchQuery(e.detail.value!)}
-      placeholder="Search products..."
+      placeholder="Buscar producto por nombre"
     />
   );
 };

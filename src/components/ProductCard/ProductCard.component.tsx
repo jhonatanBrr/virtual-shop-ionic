@@ -37,17 +37,17 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   return (
     <IonCard className="product-card">
       <IonCardContent>
-
       <div className="favorite-icon" onClick={handleFavoriteToggle}>
-          <IonIcon icon={isFavorite ? heart : heartOutline} />
-        </div>
+        <IonIcon color='red' icon={isFavorite ? heart : heartOutline} />
+      </div>
 
-        <IonImg src={product.images[0]} alt="Air Max Motion 2" className="product-image" />
+
+        <IonImg src={product.images[0]} alt="Air Max Motion 2" />
 
         <h2 className="product-title">{truncateText(product.title, 20)}</h2>
 
         <IonText color="primary">
-          <p className="product-price">{product.price}</p>
+          <p className="product-price">$ {product.price}</p>
         </IonText>
 
         <div className="rating">

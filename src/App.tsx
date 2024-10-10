@@ -10,7 +10,7 @@ import {
   setupIonicReact
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { heart, home } from 'ionicons/icons';
+import { heart, cart } from 'ionicons/icons';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -52,7 +52,7 @@ const App: React.FC = () => (
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
           <IonTabButton tab="tab-products" href="/products">
-            <IonIcon aria-hidden="true" icon={home} />
+            <IonIcon aria-hidden="true" icon={cart} />
             <IonLabel>Home</IonLabel>
           </IonTabButton>
 

@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
-import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/react';
+import React, { useEffect, useState } from 'react';
+import { IonPage, IonContent } from '@ionic/react';
 import './Products.style.css';
 import ProductCard from '../../components/ProductCard/ProductCard.component';
 import SearchBar from '../../components/SearchBar/SearchBar.component';
-import useProducts from '../../hooks/useProducts.hooks';
 import Paginator from '../../components/Paginator/Paginator.component';
 import useDebounced from '../../hooks/useDebounced.hooks';
 import CategoryFilter from '../../components/CategoryFilter/CategoryFilter.components';
+import { useAppDispatch, useAppSelector } from '../../redux/hooks';
+import { fetchProducts } from '../../redux/actions/products.actions';
 
 const Products: React.FC = () => {
 
@@ -17,30 +18,31 @@ const Products: React.FC = () => {
   const [searcherValue, setSearcherValue] = useState<string>('')
   const { debouncedValue } = useDebounced(searcherValue);
   const [categoryId, setCategoryId] = useState<number>(0);
-  
-  const { 
-    products, 
-    loading, 
-    error 
-  } = useProducts(page, limit, debouncedValue, categoryId);
+
+  const dispatch = useAppDispatch();
+  const { products, loading, error } = useAppSelector(state => state.products);
+
+  useEffect(() => {
+    dispatch(fetchProducts({ page, limit, title: debouncedValue, categoryId }));
+  }, [dispatch, page, limit, debouncedValue, categoryId]);
+
 
   return (
     <IonPage>
       <IonContent>
+      {/* <IonSpinner color="primary"></IonSpinner> */}
         <CategoryFilter 
           categoryId={categoryId}
           setCategoryId={setCategoryId}
         />
         <SearchBar searchQuery={searcherValue} setSearchQuery={setSearcherValue} />
-        
+
         <div className='products-list'>
           {
             products.map((product) => (
               <ProductCard
                 key={product.id}
-                title={product.title}
-                price={product.price}
-                images={product.images[0]}
+                product={product}
               />
             ))
           }
@@ -49,7 +51,7 @@ const Products: React.FC = () => {
           currentPage={page}
           totalPages={totalPages}
           onPageChange={setPage}
-        />
+        /> 
 
       </IonContent>
     </IonPage>
